@@ -28,8 +28,7 @@ jobs:
           start: npm run start-prod
           wait-on: http://localhost:5000
       - name: Deploy
-        uses: bounceapp/render-action@0.6.0
+        uses: JorgeLNJunior/render-deploy@v1.3.2
         with:
-          render-token: ${{ secrets.RENDER_API_KEY }}
+          api_key: ${{ secrets.RENDER_API_KEY }}
           service-id: ${{ secrets.RENDER_SERVICE_ID }}
-          retries: 20
