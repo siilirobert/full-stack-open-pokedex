@@ -50,7 +50,7 @@ jobs:
             severity: error
             username: SiiliRobert
             text: Build failed!
-            description:
+            description: 'details:'
             details: The commit ${{ github.event.commits[0].url }} by ${{ github.event.commits[0].committer.username }} broke something
             webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
   tag_release:
