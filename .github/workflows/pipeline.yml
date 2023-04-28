@@ -12,7 +12,6 @@ jobs:
   simple_deployment_pipeline:
     runs-on: ubuntu-20.04
     steps:
-      if: ${{ github.event_name == 'push' }}
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
@@ -32,6 +31,7 @@ jobs:
           start: npm run start-prod
           wait-on: http://localhost:5000
       - name: Deploy
+        if: ${{ github.event_name == 'push' }}
         uses: JorgeLNJunior/render-deploy@v1.3.2
         with:
           api_key: ${{ secrets.RENDER_API_KEY }}
