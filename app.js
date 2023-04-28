@@ -7,6 +7,8 @@ router.get('/version', (req, res) => {
 })
 
 router.get('/health', (req, res) => {
+  throw 'error...'
+  // eslint-disable-next-line no-unreachable
   res.send('ok')
 })
 
