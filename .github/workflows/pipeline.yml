@@ -43,8 +43,7 @@ jobs:
             severity: info
             username: SiiliRobert
             text: New version!
-            description: null
-            details: A new version of pokedex has been deployed to https://pokedex-ktrz.onrender.com/ by ${{ github.event.commits[0].committer.username }}
+            description: A new version of pokedex has been deployed to https://pokedex-ktrz.onrender.com/ by ${{ github.event.commits[0].committer.username }}
             webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Discord webhook fail
         uses: rjstone/discord-webhook-notify@v1
@@ -53,8 +52,7 @@ jobs:
             severity: error
             username: SiiliRobert
             text: Build failed!
-            description: 'details:'
-            details: The commit ${{ github.event.commits[0].url }} by ${{ github.event.commits[0].committer.username }} broke something
+            description: The commit ${{ github.event.commits[0].url }} by ${{ github.event.commits[0].committer.username }} broke something
             webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
   tag_release:
     needs: [simple_deployment_pipeline]
