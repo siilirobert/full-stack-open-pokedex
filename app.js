@@ -3,7 +3,7 @@ const app = express()
 const router = express.Router()
 
 router.get('/version', (req, res) => {
-  res.send('3') // change this string to ensure a new version deployed
+  res.send('4') // change this string to ensure a new version deployed
 })
 
 router.get('/health', (req, res) => {
