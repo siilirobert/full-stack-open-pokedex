@@ -48,7 +48,10 @@ jobs:
         if: failure()
         with:
             severity: error
-            details: Something went wrong with the release! the commit ${{ github.event.commits[0].url }} by ${{ github.event.commits[0].committer.username }} broke something
+            username: SiiliRobert
+            text: Build failed!
+            description:
+            details: The commit ${{ github.event.commits[0].url }} by ${{ github.event.commits[0].committer.username }} broke something
             webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
   tag_release:
     needs: [simple_deployment_pipeline]
