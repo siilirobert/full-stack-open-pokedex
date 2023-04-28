@@ -41,7 +41,10 @@ jobs:
         if: success()
         with:
             severity: info
-            details: New version of pokedex deployed!
+            username: SiiliRobert
+            text: New version!
+            description: ''
+            details: A new version of pokedex has been deployed to https://pokedex-ktrz.onrender.com/ by ${{ github.event.commits[0].committer.username }}
             webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Discord webhook fail
         uses: rjstone/discord-webhook-notify@v1
